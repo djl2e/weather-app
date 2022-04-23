@@ -3,7 +3,7 @@ A weather app that displays weather information, both current and forecast, from
 
 [View Here!](https://djl2e.github.io/weather-app/)
 
-API CredsL
+API Creds:
 - [OpenWeather](https://openweathermap.org/)
 - [Google API](https://developers.google.com/maps/documentation/timezone/overview)
 
