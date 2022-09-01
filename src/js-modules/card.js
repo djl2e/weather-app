@@ -24,7 +24,9 @@ class WeatherCard {
 
   getTime() {
     const minutes = this.time.getMinutes();
-    return `${this.getShortHour()}:${minutes} ${this.getMeridiem()}`;
+    let minutesString = '';
+    minutesString = minutes < 10 ? `0${minutes}` : minutes.toString();
+    return `${this.getShortHour()}:${minutesString} ${this.getMeridiem()}`;
   }
 
   getHour() {

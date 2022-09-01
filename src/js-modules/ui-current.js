@@ -26,8 +26,6 @@ const currenTime = document.querySelector('#current-time');
 const currentTemperature = document.querySelector('#current-temperature');
 const currentIcon = document.querySelector('#current-icon');
 
-const searchCityBar = document.querySelector('#search-city');
-
 // selectors for accessory display
 const feelsTemperature = document.querySelector('#feels-container .temperature');
 const humidityLevel = document.querySelector('#humidity-container .temperature');
@@ -97,19 +95,6 @@ function changeAccessoryDisplay(feels, humidity, rain, wind) {
   humidityLevel.textContent = `${humidity} %`;
   chanceOfRain.textContent = `${rain} %`;
   windSpeed.textContent = `${wind} km/h`;
-}
-
-function changeTopDisplay(
-  description,
-  city,
-  dateTime,
-  temperature,
-  iconId,
-  feels,
-  humidity,
-  rain,
-  wind,
-) {
 }
 
 export {

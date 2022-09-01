@@ -1,5 +1,5 @@
 import './style.css';
-import { getWeather } from './js-modules/weather';
+import getWeather from './js-modules/weather';
 import {
   setup, changeTopDisplay, changeBottomDisplay, changeModeDisplay, changeSlider,
 } from './js-modules/ui';

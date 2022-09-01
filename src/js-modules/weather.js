@@ -3,8 +3,9 @@ import createWeatherCard from './card';
 
 const weatherCall = 'https://api.openweathermap.org/data/2.5/onecall?';
 const geoCall = 'https://api.openweathermap.org/geo/1.0/direct?q=';
-const timeZoneCall = 'https://maps.googleapis.com/maps/api/timezone/json?key=AIzaSyBXB5H5NVNml9c98Psjn781ujufoyb5Th8&timestamp=1331161200&location=';
-const apiKey = '&appid=f6fe573217fdba1db21f1000d71591e2';
+const timeZoneCall = `https://maps.googleapis.com/maps/api/timezone/json?key=${
+  process.env.GEO_API_KEY}&timestamp=1331161200&location=`;
+const apiKey = process.env.WEATHER_API_KEY;
 
 let city = '';
 let timeZoneId = '';
@@ -44,8 +45,9 @@ function getCurrentWeather(currentWeather) {
   const currentHumidity = currentWeather.humidity;
   const currentWindSpeed = currentWeather.wind_speed;
   let currentChanceOfRain = 0;
+
   if ('rain' in currentWeather) {
-    currentChanceOfRain = currentWeather.rain['1h'] * 100;
+    currentChanceOfRain = currentWeather.rain['1h'] * 10;
   }
 
   return {
@@ -90,7 +92,6 @@ async function getWeather(citySearched) {
     const timeZoneInfo = await getTimeZone(lat, lon);
     timeZoneId = timeZoneInfo.timeZoneId;
     const weatherInfo = await getWeatherInfo(lat, lon);
-    console.log(weatherInfo);
     const dailyForecast = getForecast(weatherInfo.daily, 8, 'daily');
     const hourlyForecast = getForecast(weatherInfo.hourly, 25, 'hourly');
     const currentWeather = getCurrentWeather(weatherInfo.current);
@@ -100,4 +101,4 @@ async function getWeather(citySearched) {
   }
 }
 
-export { getWeather };
+export default getWeather;
