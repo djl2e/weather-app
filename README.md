@@ -18,6 +18,22 @@
 - Bottom of the screen gives weather forecast that is either in intervals of daily or hourly, with options to change in between
 
 ## Getting Started
+<details>
+ <summary>Daily Forecast</summary>
+ <img src="https://github.com/djl2e/weather-app/blob/fd802371d9870c5c180fd051d0fd40fc5ea758c3/readme_pictures/Daily.png" name="login page">
+</details>
+<details>
+ <summary>Hourly Forecast</summary>
+ <img src="https://github.com/djl2e/weather-app/blob/fd802371d9870c5c180fd051d0fd40fc5ea758c3/readme_pictures/Hourly.png" name="login page">
+</details>
+<details>
+ <summary>Imperial Units</summary>
+ <img src="https://github.com/djl2e/weather-app/blob/fd802371d9870c5c180fd051d0fd40fc5ea758c3/readme_pictures/Imperial.png" name="login page">
+</details>
+<details>
+ <summary>Location Search</summary>
+ <img src="https://github.com/djl2e/weather-app/blob/fd802371d9870c5c180fd051d0fd40fc5ea758c3/readme_pictures/Search.png" name="login page">
+</details>
 
 ### Clone repository
 ```
