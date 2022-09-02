@@ -45,7 +45,7 @@ cd weather-app
 ### Set up environment variables
 ```
 WEATHER_API_KEY = '&' + <OpenWeather API Key>
-GEO_API_KEY = <Google Geolocation API Key>
+GEO_API_KEY = <Google Time Zone API Key>
 ```
 
 ### Install packages and run start
@@ -62,17 +62,13 @@ git subtree push --prefix dist origin gh-pages
 
 ## Built With
 - Webpack
-- OpenWeather API
-- Google Geolocation API
+- [OpenWeather API](https://openweathermap.org/)
+- [Google Time Zone API](https://developers.google.com/maps/documentation/timezone/overview)
 
 ## Authors
 - [Daniel Joseph Lee](https://github.com/djl2e)
 
-API Creds:
-- [OpenWeather](https://openweathermap.org/)
-- [Google API](https://developers.google.com/maps/documentation/timezone/overview)
-
-Image/Icon Creds:
+## Image/Icon Creds
 - [Nathan Anderson](https://unsplash.com/photos/L95xDkSSuWw)
 - [Icons DB](https://www.iconsdb.com/)
 - [Google Fonts](https://fonts.google.com/)
