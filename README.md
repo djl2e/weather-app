@@ -5,19 +5,6 @@
 
 ## Pictures
 
-## Features
-
-### Controls
-- Search bar for location
-- Options for daily vs hourly forecast
-- Options for metric vs imperial unit
-
-### View
-- Upper left-hand panel shows local time and basic weather information (current temperature and weather description)
-- Upper right-hand panel displays accessory weather information (feels like temp, humidity, chance of rain, wind speed) and control buttons for units
-- Bottom of the screen gives weather forecast that is either in intervals of daily or hourly, with options to change in between
-
-## Getting Started
 <details>
  <summary>Daily Forecast</summary>
  <img src="https://github.com/djl2e/weather-app/blob/fd802371d9870c5c180fd051d0fd40fc5ea758c3/readme_pictures/Daily.png" name="login page">
@@ -34,6 +21,20 @@
  <summary>Location Search</summary>
  <img src="https://github.com/djl2e/weather-app/blob/fd802371d9870c5c180fd051d0fd40fc5ea758c3/readme_pictures/Search.png" name="login page">
 </details>
+
+## Features
+
+### Controls
+- Search bar for location
+- Options for daily vs hourly forecast
+- Options for metric vs imperial unit
+
+### View
+- Upper left-hand panel shows local time and basic weather information (current temperature and weather description)
+- Upper right-hand panel displays accessory weather information (feels like temp, humidity, chance of rain, wind speed) and control buttons for units
+- Bottom of the screen gives weather forecast that is either in intervals of daily or hourly, with options to change in between
+
+## Getting Started
 
 ### Clone repository
 ```
