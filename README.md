@@ -1,7 +1,55 @@
-# weather-app
-A weather app that displays weather information, both current and forecast, from all over the world. This website uses data from OpenWeather API. 
+# Weather App
+> A weather app that displays current weather information and forecast from all over the world.
 
-[View Here!](https://djl2e.github.io/weather-app/)
+[Link to Deployed Project](https://djl2e.github.io/weather-app/)
+
+## Pictures
+
+## Features
+
+### Controls
+- Search bar for location
+- Options for daily vs hourly forecast
+- Options for metric vs imperial unit
+
+### View
+- Upper left-hand panel shows local time and basic weather information (current temperature and weather description)
+- Upper right-hand panel displays accessory weather information (feels like temp, humidity, chance of rain, wind speed) and control buttons for units
+- Bottom of the screen gives weather forecast that is either in intervals of daily or hourly, with options to change in between
+
+## Getting Started
+
+### Clone repository
+```
+git clone git@github.com:djl2e/weather-app.git
+cd weather-app
+```
+
+### Set up environment variables
+```
+WEATHER_API_KEY = '&' + <OpenWeather API Key>
+GEO_API_KEY = <Google Geolocation API Key>
+```
+
+### Install packages and run start
+```
+npm i // install npm dependencies
+npx webpack // build bundle with webpack
+cd dist & open index.html // run locally
+```
+
+## Deployment (Github Pages)
+```
+git subtree push --prefix dist origin gh-pages
+```
+
+## Built With
+- Webpack
+- OpenWeather API
+- Google Geolocation API
+
+## Authors
+- [Daniel Joseph Lee](https://github.com/djl2e)
 
 API Creds:
 - [OpenWeather](https://openweathermap.org/)
