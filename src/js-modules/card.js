@@ -1,9 +1,10 @@
 class WeatherCard {
-  constructor(time, temperature, iconId) {
+  constructor(time, temperature, iconId, unit) {
     this.time = time;
     this.temperature = temperature;
     this.iconId = iconId;
     this.hour = this.time.getHours();
+    this.unit = unit === 'metric' ? '°C' : '°F';
   }
 
   getMeridiem() {
@@ -82,7 +83,7 @@ class WeatherCard {
   }
 
   getTemperature() {
-    return `${this.temperature.toFixed(0).toString()} °C`;
+    return `${this.temperature.toFixed(0).toString()} ${this.unit}`;
   }
 
   getIconName() {
@@ -119,8 +120,8 @@ class WeatherCard {
   }
 }
 
-function createWeatherCard(time, temperature, iconId) {
-  return new WeatherCard(time, temperature, iconId);
+function createWeatherCard(time, temperature, iconId, unit) {
+  return new WeatherCard(time, temperature, iconId, unit);
 }
 
 export default createWeatherCard;

@@ -16,8 +16,8 @@ function getGeoInfo() {
     .then((response) => response.json());
 }
 
-function getWeatherInfo(lat, lon) {
-  const call = `${weatherCall}lat=${lat}&lon=${lon}&units=metric${apiKey}`;
+function getWeatherInfo(lat, lon, unit) {
+  const call = `${weatherCall}lat=${lat}&lon=${lon}&units=${unit}${apiKey}`;
   return fetch(call, { mode: 'cors' })
     .then((response) => response.json());
 }
@@ -62,7 +62,7 @@ function getCurrentWeather(currentWeather) {
   };
 }
 
-function getForecast(forecast, arrayLength, type) {
+function getForecast(forecast, arrayLength, type, unit) {
   const forecastArray = [];
 
   for (let i = 1; i < arrayLength; i++) {
@@ -77,13 +77,14 @@ function getForecast(forecast, arrayLength, type) {
       convertToLocalTime(forecastItem.dt),
       forecastTemp,
       forecastItem.weather[0].icon,
+      unit,
     );
     forecastArray.push(forecastCard);
   }
   return forecastArray;
 }
 
-async function getWeather(citySearched) {
+async function getWeather(citySearched, unit) {
   try {
     city = citySearched;
     const geoInfo = await getGeoInfo();
@@ -91,9 +92,9 @@ async function getWeather(citySearched) {
     const { lon } = geoInfo[0];
     const timeZoneInfo = await getTimeZone(lat, lon);
     timeZoneId = timeZoneInfo.timeZoneId;
-    const weatherInfo = await getWeatherInfo(lat, lon);
-    const dailyForecast = getForecast(weatherInfo.daily, 8, 'daily');
-    const hourlyForecast = getForecast(weatherInfo.hourly, 25, 'hourly');
+    const weatherInfo = await getWeatherInfo(lat, lon, unit);
+    const dailyForecast = getForecast(weatherInfo.daily, 8, 'daily', unit);
+    const hourlyForecast = getForecast(weatherInfo.hourly, 25, 'hourly', unit);
     const currentWeather = getCurrentWeather(weatherInfo.current);
     return [currentWeather, dailyForecast, hourlyForecast];
   } catch (error) {

@@ -18,9 +18,10 @@ function changeTopDisplay(
   humidity,
   rain,
   wind,
+  unit,
 ) {
-  changeCurrentDisplay(description, city, time, temperature, icon);
-  changeAccessoryDisplay(feels, humidity, rain, wind);
+  changeCurrentDisplay(description, city, time, temperature, icon, unit);
+  changeAccessoryDisplay(feels, humidity, rain, wind, unit);
 }
 
 function changeBottomDisplay(dailyForecast, hourlyForecast) {

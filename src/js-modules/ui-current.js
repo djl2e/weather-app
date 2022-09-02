@@ -31,6 +31,8 @@ const feelsTemperature = document.querySelector('#feels-container .temperature')
 const humidityLevel = document.querySelector('#humidity-container .temperature');
 const chanceOfRain = document.querySelector('#rain-container .temperature');
 const windSpeed = document.querySelector('#wind-container .temperature');
+const celButton = document.querySelector('#celsius');
+const fahrButton = document.querySelector('#fahrenheit');
 
 function getIconImage(iconName) {
   switch (iconName) {
@@ -65,8 +67,8 @@ function capitalizeString(description) {
   return words.join(' ');
 }
 
-function changeCurrentDisplay(description, city, dateTime, temperature, iconId) {
-  const currentWeatherCard = createWeatherCard(dateTime, temperature, iconId);
+function changeCurrentDisplay(description, city, dateTime, temperature, iconId, unit) {
+  const currentWeatherCard = createWeatherCard(dateTime, temperature, iconId, unit);
 
   currentWeatherDescription.textContent = capitalizeString(description);
   currentCity.textContent = capitalizeString(city);
@@ -90,11 +92,22 @@ function setAccessoryIcons() {
   searchIcon.src = searchIconImg;
 }
 
-function changeAccessoryDisplay(feels, humidity, rain, wind) {
-  feelsTemperature.textContent = `${feels.toFixed(0).toString()} °C`;
-  humidityLevel.textContent = `${humidity} %`;
-  chanceOfRain.textContent = `${rain} %`;
-  windSpeed.textContent = `${wind} km/h`;
+function changeAccessoryDisplay(feels, humidity, rain, wind, unit) {
+  const tempUnit = unit === 'metric' ? '°C' : '°F';
+  const windUnit = unit === 'metric' ? 'm/s' : 'mi/h';
+
+  if (unit === 'metric') {
+    celButton.classList.add('chosen');
+    fahrButton.classList.remove('chosen');
+  } else {
+    celButton.classList.remove('chosen');
+    fahrButton.classList.add('chosen');
+  }
+
+  feelsTemperature.textContent = `${feels.toFixed(0).toString()} ${tempUnit}`;
+  humidityLevel.textContent = `${Math.round(humidity)} %`;
+  chanceOfRain.textContent = `${Math.round(rain)} %`;
+  windSpeed.textContent = `${Math.round(wind)} ${windUnit}`;
 }
 
 export {
