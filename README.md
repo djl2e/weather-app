@@ -1,4 +1,4 @@
-# Weather App
+# MyWeather
 > A weather app that displays current weather information and forecast from all over the world.
 
 [Link to Deployed Project](https://djl2e.github.io/weather-app/)

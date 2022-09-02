@@ -8,7 +8,7 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Weather App',
+      title: 'MyWeather',
       template: './src/template.html',
     }),
     new Dotenv(),
